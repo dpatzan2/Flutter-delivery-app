@@ -104,7 +104,7 @@ class RestaurantProductsCreatePage extends StatelessWidget {
           ),
         ),
         items: _dropDownItems(categories),
-        //value: con.idCategory,
+        value: con.idCategory,
         onChanged: (option) {
           print('opcion selecionada ${option}');
           con.idCategory = option.toString();
@@ -113,7 +113,7 @@ class RestaurantProductsCreatePage extends StatelessWidget {
     );
   }
 
-  List<DropdownMenuItem<String?>> _dropDownItems(List<Category> categories) {
+  List<DropdownMenuItem<String>> _dropDownItems(List<Category> categories) {
     List<DropdownMenuItem<String>> list = [];
     categories.forEach((category) {
       list.add(DropdownMenuItem(
