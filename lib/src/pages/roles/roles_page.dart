@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 class RolesPage extends StatelessWidget {
   RolesController con = Get.put(RolesController());
+  static const Object IMAGE = AssetImage('assets/img/no-image.png');
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class RolesPage extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 15),
               height: 100,
               child: FadeInImage(
-                image: NetworkImage(rol.image!),
+                image: NetworkImage(rol.image ?? IMAGE.toString() ),
                 fit: BoxFit.contain,
                 fadeInDuration: Duration(milliseconds: 50),
                 placeholder: AssetImage('assets/img/no-image.png'),

@@ -9,6 +9,7 @@ import 'package:delivery_w_flutter/src/pages/login/login_page.dart';
 import 'package:delivery_w_flutter/src/pages/register/register_page.dart';
 import 'package:delivery_w_flutter/src/pages/restaurant/home/restaurant_home_page.dart';
 import 'package:delivery_w_flutter/src/pages/restaurant/orders/list/restaurant_orders_list_page.dart';
+import 'package:delivery_w_flutter/src/pages/client/orders/create/client_orders_create_page.dart';
 import 'package:delivery_w_flutter/src/pages/roles/roles_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -54,6 +55,7 @@ class _MyAppState extends State<MyApp> {
         GetPage(name: '/client/home', page: ()=> ClientHomePage()),
         GetPage(name: '/client/profile/info', page: ()=> ClientProfileInfoPage()),
         GetPage(name: '/client/profile/update', page: ()=> ClientProfileUpdatePage()),
+        GetPage(name: '/client/orders/create', page: ()=> ClientOrdersCreatePage()),
       ],
       theme: ThemeData(
         primaryColor: Colors.amber,

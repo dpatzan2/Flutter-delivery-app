@@ -1,3 +1,4 @@
+import 'package:delivery_w_flutter/src/pages/client/products/list/client_products_list_page.dart';
 import 'package:delivery_w_flutter/src/pages/client/profile/info/client_profile_info_page.dart';
 import 'package:delivery_w_flutter/src/pages/delivery/orders/list/delivery_orders_list_page.dart';
 import 'package:delivery_w_flutter/src/pages/register/register_page.dart';
@@ -21,7 +22,7 @@ class ClientHomePage extends StatelessWidget {
       body: Obx(() => IndexedStack(
         index: con.indexTab.value,
         children: [
-          RestaurantOrdersListPage(),
+          ClientProductsListPage(),
           DeliveryOrdersListPage(),
           ClientProfileInfoPage()
         ],
@@ -39,7 +40,7 @@ class ClientHomePage extends StatelessWidget {
       selectedIndex: con.indexTab.value,
       onItemSelected: (index) => con.changeTab(index),
       items: [
-        BottomNavyBarItem(icon: Icon(Icons.apps), title: Text('Home'), activeColor: Colors.white, inactiveColor: Colors.black),
+        BottomNavyBarItem(icon: Icon(Icons.apps), title: Text('Productos'), activeColor: Colors.white, inactiveColor: Colors.black),
         BottomNavyBarItem(icon: Icon(Icons.list), title: Text('Mis pedidos'), activeColor: Colors.white, inactiveColor: Colors.black),
         BottomNavyBarItem(icon: Icon(Icons.person), title: Text('Perfil'), activeColor: Colors.white, inactiveColor: Colors.black),
       ],

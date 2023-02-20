@@ -59,6 +59,7 @@ class RestaurantProductsCreatePage extends StatelessWidget {
             _textPrice(),
             _dropDownCategories(con.categories),
             Container(
+              margin: EdgeInsets.only(top: 5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -104,10 +105,10 @@ class RestaurantProductsCreatePage extends StatelessWidget {
           ),
         ),
         items: _dropDownItems(categories),
-        value: con.idCategory,
+        value: con.idCategory.value == '' ? null : con.idCategory.value,
         onChanged: (option) {
-          print('opcion selecionada ${option}');
-          con.idCategory = option.toString();
+          print('Opcion seleccionada ${option}');
+          con.idCategory.value = option.toString();
         },
       ),
     );
@@ -116,8 +117,7 @@ class RestaurantProductsCreatePage extends StatelessWidget {
   List<DropdownMenuItem<String>> _dropDownItems(List<Category> categories) {
     List<DropdownMenuItem<String>> list = [];
     categories.forEach((category) {
-      list.add(DropdownMenuItem(
-          child: Text(category.name ?? ''),
+      list.add(DropdownMenuItem(child: Text(category.name ?? ''),
         value: category.id,
       ));
     });
@@ -199,7 +199,7 @@ class RestaurantProductsCreatePage extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
       child: ElevatedButton(
           onPressed: () {
-            con.createCategory();
+            con.createProduct(context);
           },
           style: ElevatedButton.styleFrom(
               padding: EdgeInsets.symmetric(vertical: 15)
